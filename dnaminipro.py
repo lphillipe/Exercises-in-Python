@@ -6,12 +6,12 @@ def max_consecutive(dna, seq):
         cont = 0
         j = i
 
-        while dna[j:j+tamanho] == seq:
+        while j+ tamanho <= len(dna) and dna[j:j+tamanho] == seq:
             cont += 1
             j += tamanho
 
-            if cont > maior:
-                maior = cont
+        if cont > maior:
+            maior = cont
 
     return maior
 
