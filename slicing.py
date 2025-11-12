@@ -1,7 +1,7 @@
 def analisar_string(palavra):
     primeiros = palavra[:2]
     ultimos = palavra[-2:]
-    invertida = palavras[::-1]
+    invertida = palavra[::-1]
     return primeiros, ultimos, invertida
 
 texto = input("Digite uma palavra: ")
