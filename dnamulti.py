@@ -14,3 +14,15 @@ def max_consecutive(dna, seq):
             maior = cont
     return maior
 
+def analyze(dna, seqs):
+    resultados = {}
+
+    for seq in seqs:
+        resultados[seq] = max_consecutive(dna, seq)
+
+    return resultados
+
+dna = "AAGTAAGAAGTTTAT"
+seqs = ["AAG", "TT", "AT"]
+
+print(analyze(dna, seqs))
