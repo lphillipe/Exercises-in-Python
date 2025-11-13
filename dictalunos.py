@@ -10,11 +10,11 @@ def analisar_turma():
         alunos[nome] = nota
     
     # Calcular média da turma
-    media = sum(alunos.values() / len(alunos))
+    media = sum(alunos.values()) / len(alunos)
 
     # Encontrar maior nota e quem tirou
     maior = max(alunos.values())
-    for nome, nnota in alunos.items():
+    for nome, nota in alunos.items():
         if nota == maior:
             nome_maior = nome
             break
