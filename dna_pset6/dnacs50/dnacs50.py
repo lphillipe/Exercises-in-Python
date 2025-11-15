@@ -64,7 +64,7 @@ def longest_match(sequence, subsequence):
     seq_len = len(sequence)
 
     # para cada posição da sequência
-    for in in range(seq_len):
+    for i in range(seq_len):
         count = 0
 
         while True:
@@ -78,3 +78,7 @@ def longest_match(sequence, subsequence):
 
         longest_run = max(longest_run, count)
     return longest_run
+
+
+if __name__ == "__main__":
+    main()
