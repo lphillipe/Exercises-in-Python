@@ -1,0 +1,18 @@
+Média da Turma: 7.40
+Maior nota: Saria (10.0)
+Menor nota: Lumi (5.0)
+Alunos ordenados por nota:
+Saria (10.0)
+Kai (9.0)
+Luis Phillipe (7.0)
+Oceana (6.0)
+Lumi (5.0)
+
+Aprovados
+Saria (10.0)
+Oceana (6.0)
+Luis Phillipe (7.0)
+Kai (9.0)
+
+Reprovados
+Lumi (5.0)
