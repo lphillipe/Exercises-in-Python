@@ -6,3 +6,4 @@ print(len(frase)) # conta quantos caracteres tem a frase
 
 print(frase[2])
 print(frase.index("L"))
+print(frase.replace("Luís", ("Oceana")))
