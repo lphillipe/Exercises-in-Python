@@ -10,6 +10,6 @@ print(frase.replace("Luís", ("Oceana")))
 
 
 lucky_numbers = [42, 10, 35, 4, 16, 1]
-friends = ["Luís","Kevin", "Francisco", "Marcela", "Joaquina"]
-friends.extend(lucky_numbers)
+friends = ["Luís","Kevin", "Francisco", "Francisco", "Marcela", "Joaquina"]
+friends.remove("Kevin")
 print(friends)
