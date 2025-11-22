@@ -4,4 +4,6 @@ num_grade = [
     [0],
 ]
 
-print(num_grade[2] [0])
+for linha in num_grade:
+    for col in linha:
+        print(col)
