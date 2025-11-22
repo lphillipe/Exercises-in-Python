@@ -2,4 +2,6 @@ Jim - Salesman
 Dwight - Salesman
 Pam - Receptionist
 Michael - Manager
-Oscar -  Accountant
+Oscar -  AccountantToby - Human Resourcers
+Toby - Human Resourcers
+Juracy - Customer Service
