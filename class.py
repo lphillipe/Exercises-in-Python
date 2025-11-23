@@ -1,5 +1,8 @@
 from student import student
 
-print("Student Information system")
+
 student1 = student("Oceana", 29, "Pedagogy", 8.0)
-print(f"Name: {student1.name}, Age: {student1.age}, Major: {student1.major}, Grade: {student1.grade}")
+student2 = student("Luis", 31, "System analysis", 5.5)
+
+
+print(student2.on_honor_roll())

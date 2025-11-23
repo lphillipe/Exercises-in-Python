@@ -5,3 +5,9 @@ class student:
         self.age = age
         self.major = major
         self.grade = grade
+    
+    def on_honor_roll(self):
+        if self.grade >= 6.0:
+            return True
+        else:
+            return False
