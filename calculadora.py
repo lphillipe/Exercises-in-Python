@@ -18,7 +18,7 @@ try:
         print(f"O resultado da multiplicação é: {resultado}")
 
     elif operacao == '/':
-        if float(num2) == 0:
+        if (num2) == 0:
             print("Erro: Divisão por zero não é permitida.")
         else:
             resultado = (num1) / (num2)
