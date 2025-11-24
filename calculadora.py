@@ -1,11 +1,32 @@
-num1 = input("Digite o primeiro número: ")
-num2 = input("Digite o segundo número: ")
-operacao = input("Digite a operação (+, -, *, /): ")
+try:
+    num1 = input("Digite o primeiro número: ")
+    num2 = input("Digite o segundo número: ")
 
-if operacao == '+':
-    resultado = float(num1) + float(num2)
-    return f"O resultado da adição é: {resultado}"
+    
+    operacao = input("Digite a operação (+, -, *, /): ")
 
-elif operacao == '-':
-    resultado = float(num1) - float(num2)
-    return f"O resultado da subtração é: {resultado}"
+    if operacao == '+':
+        resultado = float(num1) + float(num2)
+        print(f"O resultado da adição é: {resultado}")
+
+    elif operacao == '-':
+        resultado = float(num1) - float(num2)
+        print(f"O resultado da subtração é: {resultado}")
+
+    elif operacao == '*':
+        resultado = float(num1) * float(num2)
+        print(f"O resultado da multiplicação é: {resultado}")
+
+    elif operacao == '/':
+        if float(num2) == 0:
+            print("Erro: Divisão por zero não é permitida.")
+        else:
+                resultado = float(num1) / float(num2)
+                print(f"O resultado da divisão é: {resultado}")
+
+    else:
+        print("Operação inválida, por favor insira uma operação válida (+, -, *, /).")
+
+except ValueError:
+    print("Digite um valor válido")
+    exit()
