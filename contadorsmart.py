@@ -9,10 +9,18 @@ try:
             num += 1
         print("Contagem Crescente concluída!")
 
+
+        num = contagem
         while num >= 0:
             print(num)
             num -= 1
         print("Contagem Decrescente concluída!")
+
+        while num <= contagem:
+            if num % 2 == 0:
+                print(f"Números pares: {num}")
+            elif num % 2 != 0:
+                print(f"Números ímpares: {num}")
     
 
 except ValueError:
