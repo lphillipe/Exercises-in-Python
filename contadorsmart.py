@@ -7,6 +7,14 @@ try:
         while num <= contagem:
             print(num)
             num += 1
+        print("Contagem Crescente concluída!")
+
+        while num >= 0:
+            print(num)
+            num -= 1
+        print("Contagem Decrescente concluída!")
+    
+
 except ValueError:
     print("Digite um valor válido")
     exit()
