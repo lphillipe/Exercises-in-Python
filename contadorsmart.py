@@ -16,11 +16,15 @@ try:
             num -= 1
         print("Contagem Decrescente concluída!")
 
+        num = 0
         while num <= contagem:
             if num % 2 == 0:
                 print(f"Números pares: {num}")
+                num += 2
             elif num % 2 != 0:
                 print(f"Números ímpares: {num}")
+                num += 2
+        print("Contagem de pares e ímpares concluída!")
     
 
 except ValueError:
