@@ -1,6 +1,16 @@
 def is_mail(texto):
-    texto = input("Digite um email: ")
-    if "@" in texto:
-        print("Tem @")
+    if "@" in texto and "." in texto:
+        return True
     else:
-        print("Não tem @")
+        return False
+
+
+email_digitado = input("Digite um emaill: ")
+
+resultado = is_mail(email_digitado)
+
+if resultado == True:
+    print("Email válido")
+
+else:
+    print("Email inválido")
