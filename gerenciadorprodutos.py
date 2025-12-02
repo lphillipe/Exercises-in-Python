@@ -23,7 +23,7 @@ def main():
         print(f"\nCadastro do produto #{i}")
         nome = input("Nome do produto: ")
         preco = ler_float("Preço (use . como separador): R$ ")
-        quantidade = ler int("Quantidade em estoque: ")
+        quantidade = ler_int("Quantidade em estoque: ")
 
         # Monta o dicionário do produto e adiciona á lista
         produto = {
@@ -36,7 +36,7 @@ def main():
         # exibe a lista completa de produtos
         print("\n=== Lista de Produtos Cadastrados ===")
         for p in produtos:
-            print(f"- {p[ 'nome']}: R$ {P['preco']:.2f} (Qtde: {p['quantidade']})")
+            print(f"- {p[ 'nome']}: R$ {p['preco']:.2f} (Qtde: {p['quantidade']})")
 
         valor_total = sum(p['preco'] * p['quantidade'] for p in produtos)
         print(f"\nValor total do estoque: R${valor_total:.2f}")
@@ -53,5 +53,6 @@ def main():
             print("Nenhum produto cadastrado.")
 
 
-    if __name__ == "__main__":
-        main()
+    
+if __name__ == "__main__":
+    main()
