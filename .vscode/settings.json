@@ -1,5 +1,7 @@
 {
     "editor.quickSuggestions": {
         "other": "off"
-    }
+    },
+    "github.copilot.chat.agent.autoFix": false,
+    "github.copilot.chat.agent.currentEditorContext.enabled": false
 }
