@@ -4,10 +4,7 @@ class Pessoa:
         self.idade = idade
 
     def maior_de_idade(self):
-        if self.idade >= 18:
-            return True
-        else:
-            return False
+        return self.idade >= 18
 
 
 p1 = Pessoa("Luís", 30)
@@ -18,6 +15,6 @@ pessoas = [p1, p2, p3]
 
 for pessoa in pessoas:
     if pessoa.maior_de_idade():
-        print("Sim, é maior de idade.")
+        print(f"Sim, {pessoa.nome} é maior de idade.")
     else:
-        print("Não é maior de idade.")
+        print(f"{pessoa.nome}, não é maior de idade.")
