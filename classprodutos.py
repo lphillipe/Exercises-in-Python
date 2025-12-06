@@ -40,3 +40,25 @@ for produto in produtos:
 
 total_estoque = sum(p.valor_total() for p in produtos)
 print("Valor total do estoque é: ", total_estoque)
+
+
+def testar_produtos():
+    print("=== Testando Produtos ===")
+    print("\n--- Testando valor_total() ---")
+    print(p1.valor_total())
+    print(p2.valor_total())
+    print(p3.valor_total())
+    print("\n--- Testando adicionar() ---")
+    p1.adicionar(5)
+    p1.adicionar(0)
+    p1.adicionar(-2)
+
+    print("\n--- Testando remover() ---")
+    p1.remover(3)
+    p2.remover(10)
+    p3.remover(0)
+    p3.remover(-5)
+    p3.remover(1)  # Remoção válida
+
+    print("=== Fim dos testes ===")
+testar_produtos()
