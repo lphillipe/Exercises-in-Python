@@ -1,0 +1,36 @@
+class Produtos:
+
+    def __init__(self, nome, preco, quantidade):
+        self.nome = nome
+        self.preco = preco
+        self.quantidade = quantidade
+
+    def valor_total(self)
+        return self.preco * self.quantidade
+
+    def adicionar(self, qtd):
+        if qtd > 0:
+            self.quantidade += qtd
+            print(f"{qtd} unidades adicionadas. Novo estoque: {self.quantidade}")
+
+        else:
+            print("Quantidade inválida. Use apenas valores positivos.")
+
+    def remover(self, qtd):
+        if qtd <= 0:
+            print("Quantidade inválida. Informe um valor positivo.")
+            return
+
+        if qtd > self.quantidade:
+            print(f"Não é possível remover {qtd} unidades. Estoque atual: {self.quantidade}.")
+            return
+
+        self.quantidade -= qtd
+        print(f"{qtd} unidades removidas. Estoque restante: {self.quantidade}.")
+
+
+p1 = Produtos("Banana",10, 12)
+p2 = Produtos("Melancia", 5, 1)
+p3 = Produtos("Melão", 10, 1)
+
+produtos = [p1, p2, p3]
