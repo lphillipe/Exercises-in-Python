@@ -15,3 +15,9 @@ p2 = Pessoa("Oceana", 29)
 p3 = Pessoa("Saria", 8)
 
 pessoas = [p1, p2, p3]
+
+for pessoa in pessoas:
+    if pessoa.maior_de_idade():
+        print("Sim, é maior de idade.")
+    else:
+        print("Não é maior de idade.")
