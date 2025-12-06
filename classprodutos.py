@@ -5,7 +5,7 @@ class Produtos:
         self.preco = preco
         self.quantidade = quantidade
 
-    def valor_total(self)
+    def valor_total(self):
         return self.preco * self.quantidade
 
     def adicionar(self, qtd):
@@ -29,8 +29,14 @@ class Produtos:
         print(f"{qtd} unidades removidas. Estoque restante: {self.quantidade}.")
 
 
-p1 = Produtos("Banana",10, 12)
-p2 = Produtos("Melancia", 5, 1)
-p3 = Produtos("Melão", 10, 1)
+p1 = Produtos("Banana",10.0, 12)
+p2 = Produtos("Melancia", 5.0, 1)
+p3 = Produtos("Melão", 10.0, 1)
 
 produtos = [p1, p2, p3]
+
+for produto in produtos:
+    print(produto.nome, produto.valor_total())
+
+total_estoque = sum(p.valor_total() for p in produtos)
+print("Valor total do estoque é: ", total_estoque)
