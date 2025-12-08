@@ -2,3 +2,7 @@ Luís;31;luisphillipe200@gmail.com
 Oceana;29;oceanagatinha@gmail.com
 Saria;8;saria17@gmail.com
 Jane;60;jbcavalcanti@gmail.com
+Jair;61;jairmonteiro@gmail.com
+Lenir;21;lenir@gmail.com
+David;21;davidfeijao@hotmail.com
+Cristian;18;cris@gmail.com
