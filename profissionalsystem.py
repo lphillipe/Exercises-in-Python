@@ -49,5 +49,36 @@ def cadastrar_pessoas():
 
 cadastrar_pessoas()
 
-if __name__ == "__main__":
-    cadastrar_pessoas()
+def carregar_pessoas():
+    pessoas = []
+
+    try:
+        with open("cadastro2.txt", "r", encoding="utf-8") as arq:
+            for linha in arq:
+                linha = linha.strip()
+                if not linha:
+                    continue
+
+            partes = linhas.split(";")
+            if len(partes) !=3:
+                continue
+
+            nome, idade_str, email = partes
+
+            try:
+                idade = int(idade_str)
+
+            except ValueError:
+                continue
+
+
+            pessoas.append({
+                "nome": nome,
+                "idade": idade,
+                "email": email
+            })
+    except FileNotFoundError:
+        pass
+
+    return pessoas
+
