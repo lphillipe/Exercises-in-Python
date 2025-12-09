@@ -6,3 +6,6 @@ Juca;20;jucquinha@gmail.com
 João;50;joazo@gmail.com
 000;0;000@gmail.com
 Luiza;70;luizinha@gmail.com
+Jose;32;jose.200@gmail.com
+Zezinho;85;ze@gmail.com
+qwe23;23;qwe2@gmail.com

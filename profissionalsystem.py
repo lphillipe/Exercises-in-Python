@@ -85,7 +85,7 @@ def analisar_pessoas(pessoas):
             "total": 0,
             "media_idades": 0.0,
             "emails_validos": 0,
-            "mais_velhas": None
+            "mais_velha": None
         }
 
     total = len(pessoas)
