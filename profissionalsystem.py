@@ -17,7 +17,6 @@ def is_email(texto):
 
     return True
 
-
 def cadastrar_pessoas():
     while True:
         nome = input("Nome: ").strip()
@@ -47,8 +46,6 @@ def cadastrar_pessoas():
         if continuar != "s":
             break
 
-cadastrar_pessoas()
-
 def carregar_pessoas():
     pessoas = []
 
@@ -59,7 +56,7 @@ def carregar_pessoas():
                 if not linha:
                     continue
 
-                partes = linhas.split(";")
+                partes = linha.split(";")
                 if len(partes) !=3:
                     continue
 
@@ -102,7 +99,7 @@ def analisar_pessoas(pessoas):
         "total": total,
         "media_idades": media_idades,
         "emails_validos": emails_validos,
-        "mais_velha": mais_velhas
+        "mais_velha": mais_velha
     }
 
 def exibir_relatorio(stats):
