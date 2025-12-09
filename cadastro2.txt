@@ -1,2 +1,6 @@
 Jessica;20;jessiquinha@gmail.com
 Oceana;29;oceanadosssantos@gmail.com
+Jair;61;jairzinho@gmail.com
+Jeam;40;jeam@gmail.com
+Juca;20;jucquinha@gmail.com
+João;50;joazo@gmail.com
