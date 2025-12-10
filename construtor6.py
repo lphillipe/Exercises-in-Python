@@ -4,4 +4,7 @@ class Produto:
         self.preco = preco
 
 class Loja:
-    def __init__(self, nome, lista = [])
+    def __init__(self, nome, lista):
+        self.nome = nome
+        self.lista = []
+        
