@@ -10,7 +10,10 @@ class Senha:
         self.senha = senha
 
     def autenticar(self, senha_digitada):
-        senha_digitada == self.senha
+        if senha_digitada == self.senha:
+            return True
+        else:
+            return False
 
 
 
