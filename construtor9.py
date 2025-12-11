@@ -16,7 +16,10 @@ class Carrinho:
     def total(self):
         return sum(i.preco for i in self.itens)
 
+    def listar_items(self):
+        return [f"{i.nome} - R$ {i.preco:.2f}" for i in self.itens]
+
 c = Carrinho()
 c.adicionar_item(Item("Oleo", 10))
 c.adicionar_item(Item("Macarrão", 5))
-print(c.total())
+print("\n".join(c.listar_items()))
