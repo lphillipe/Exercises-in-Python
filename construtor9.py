@@ -12,10 +12,11 @@ class Carrinho:
             return False
         self.itens.append(item)
         return True
+    
+    def total(self):
+        return sum(i.preco for i in self.itens)
 
 c = Carrinho()
-i = Item("Feijão", 10)
-
-print(c.adicionar_item(i))
-print(c.adicionar_item("texto"))
-print(len(c.itens))
+c.adicionar_item(Item("Oleo", 10))
+c.adicionar_item(Item("Macarrão", 5))
+print(c.total())
