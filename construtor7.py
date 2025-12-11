@@ -14,3 +14,11 @@ class Biblioteca:
             return False
         
         self.livros.append(livro)
+
+    def buscar_por_autor(self, autor):
+        pass
+
+
+    def listar(self):
+        for livro in self.livros:
+            print(f"Nome do livro é {livro.nome} e seu autor é {livro.autor}")
