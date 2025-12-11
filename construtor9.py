@@ -19,7 +19,13 @@ class Carrinho:
     def listar_items(self):
         return [f"{i.nome} - R$ {i.preco:.2f}" for i in self.itens]
 
-c = Carrinho()
-c.adicionar_item(Item("Oleo", 10))
-c.adicionar_item(Item("Macarrão", 5))
-print("\n".join(c.listar_items()))
+# --- Testes rápidos ---
+if __name__ == "__main__":
+    c = Carrinho()
+    c.adicionar_item(Item("Arroz", 20))
+    c.adicionar_item(Item("Óleo", 7.5))
+    c.adicionar_item("não é item")  # será ignorado/retorna False
+
+    print("Itens no carrinho:")
+    print("\n".join(c.listar_items()))
+    print("Total: R$", f"{c.total():.2f}")
