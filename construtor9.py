@@ -3,6 +3,10 @@ class Item:
         self.nome = nome
         self. preco = preco
 
-i = Item("Arroz", 20)
+class Carrinho:
+    def __init__(self):
+        self.itens = []
 
-print(i.nome, i.preco)
+c = Carrinho()
+
+print(c.itens)
