@@ -13,3 +13,9 @@ class Piano(Instrumento):
 class Bateria(Instrumento):
     def tocar(self):
         print("Tocando Bateria 🥁")
+
+
+instrumentos = [Guitarra(), Bateria(), Piano()]
+
+for instrumento in instrumentos:
+    instrumento.tocar()
