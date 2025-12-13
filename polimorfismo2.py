@@ -1,5 +1,10 @@
 from abc import ABC, abstractmethod
 
-class Instrumento:
+class Instrumento(ABC):
+    
+    @abstractmethod
     def tocar(self):
         pass
+
+
+i = Instrumento()
