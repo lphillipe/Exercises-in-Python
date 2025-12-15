@@ -1,5 +1,7 @@
 import requests
 
-url = "https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL"
+url = "https://jsonplaceholder.typicode.com/posts"
 
-get = requests.get(url)
+url_tratada = requests.get(url)
+
+print(url_tratada)
