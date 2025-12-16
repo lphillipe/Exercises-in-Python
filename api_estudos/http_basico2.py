@@ -6,3 +6,8 @@ url_tratada = requests.get(url)
 
 dados = url_tratada.json()
 
+print(type(dados))
+
+
+#for dado in dados:
+ #   print(dado)
