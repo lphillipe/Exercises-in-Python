@@ -6,6 +6,6 @@ url_tratada = requests.get(url)
 
 dados = url_tratada.json()
 
-for dado in dados:
+for dado in dados[:5]:
     print(dado["id"])
     print(dado["title"])
