@@ -7,3 +7,6 @@ headers = {
     "Authorization": f"Bearer {token}"
 }
 
+url = "https://jsonplaceholder.typicode.com/posts"
+
+response = requests.get(url, headers=headers)
