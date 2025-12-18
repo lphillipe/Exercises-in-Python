@@ -11,10 +11,10 @@ url = "https://jsonplaceholder.typicode.com/posts"
 response = requests.get(url, headers=headers)
 
 if response.status_code == 200:
-    print("Sucessful Authorization")
+    print("Successful Authorization")
 
-elif response.status_code == in (401, 403):
+elif response.status_code in (401, 403):
     print("Wrong authorization")
 
 else:
-    print("Others errors")
+    print("Other errors")
