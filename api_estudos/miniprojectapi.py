@@ -3,7 +3,7 @@ import requests
 url ="https://jsonplaceholder.typicode.com/posts"
 
 page = 1
-limit = 2
+limit = 10
 timeout = 5
 
 params = {
