@@ -12,3 +12,9 @@ params = {
 }
 
 response = requests.get(url, params=params, timeout=timeout)
+
+if response.status_code == 200:
+    print("Successful Authorization")
+else:
+    print("Error")
+    exit()
