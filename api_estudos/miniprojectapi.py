@@ -18,3 +18,14 @@ if response.status_code == 200:
 else:
     print("Error")
     exit()
+
+datas = response.json()
+
+print("=== Posts API Client ===")
+print(f"Page: {page} | Limit: {limit}")
+print("-" * 30)
+
+for data in datas:
+    print(f"Post ID: {data['id']}")
+    print(f"Title: {data['title']}")
+    print("-" * 30)
