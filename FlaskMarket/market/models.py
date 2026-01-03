@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
     @property
     def prettier_budget(self):
         if len(str(self.budget)) >= 4:
-            return f'{str(self.budget)[:-3]}, {str(self.budget)[-3:]}$'
+            return f'{str(self.budget)[:-3]},{str(self.budget)[-3:]}$'
         else:
             return f"{self.budget}$"
 
@@ -47,3 +47,9 @@ class Item(db.Model):
 
     def __repr__(self):
         return f'Item {self.name}'
+
+
+    def buy(self, user):
+        self.owner = user.id
+        user.budget -= self.price
+        db.session.commit()
