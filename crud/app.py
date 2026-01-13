@@ -1,8 +1,16 @@
 from database import SessionLocal
 from models import User
 
-def create_user():
+def create_user(username, email):
     db = SessionLocal()
+
+    #error handling
+    user_exists = db.query(User).filter_by(email=email).first()
+
+    if user_exists:
+        print(f"Email já cadastrado")
+        db.close()
+        return
     
     #Create Users
     user = User(
@@ -18,4 +26,5 @@ def create_user():
     db.close()
 
 if __name__== "__main__":
-    create_user()
+    create_user("Joaquim","joaquim@gmail.com")
+    create_user("Celio", "joaquim@gmail.com")
