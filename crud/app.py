@@ -1,4 +1,4 @@
-from database import engine, Base
+from database import SessionLocal
 from models import User
 
 def create_user():
@@ -7,7 +7,7 @@ def create_user():
     user = User(
         username="Luis Phillipe", 
         email="phillipe@gmail.com", 
-        password_has="123456"
+        password_hash="123456"
     )
 
     db.add(user)
