@@ -3,14 +3,6 @@ from models import User
 
 def create_user():
     db = SessionLocal()
-
-    #Error handling
-    user_exists = db.query(User).filter_by(email=email).first()
-
-    if user_exists:
-        print("Email já cadastrado")
-        db.close()
-        return
     
     #Create Users
     user = User(
