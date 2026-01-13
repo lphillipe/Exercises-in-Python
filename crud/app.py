@@ -6,32 +6,14 @@ def create_user():
     
     #Create Users
     user = User(
-        username="Luis Phillipe", 
-        email="phillipe@gmail.com", 
+        username=username, 
+        email=email, 
         password_hash="123456"
     )
-    
-    user2 = User(
-        username="Oceana",
-        email="gatamatos@gmail.com",
-        password_hash="123456"
-    )
-
-    user3 = User(
-        username="João",
-        email="joaozinho@gmail.com",
-        password_hash="123456"
-    )
-
-    user4 = User(
-        username="Francisco",
-        email="joaozinho@gmail.com",
-        password_hash="123456"
-    )
-    db.add(user4)
+    db.add(user)
     db.commit()
 
-    print(f"Usuário criado com ID {user4.id}")
+    print(f"Usuário criado com ID {user.id}")
 
     db.close()
 
