@@ -15,10 +15,22 @@ def create_user():
         email="gatamatos@gmail.com",
         password_hash="123456"
     )
-    db.add(user2)
+
+    user3 = User(
+        username="João",
+        email="joaozinho@gmail.com",
+        password_hash="123456"
+    )
+
+    user4 = User(
+        username="Francisco",
+        email="joaozinho@gmail.com",
+        password_hash="123456"
+    )
+    db.add(user4)
     db.commit()
 
-    print(f"Usuário criado com ID {user.id}")
+    print(f"Usuário criado com ID {user4.id}")
 
     db.close()
 
