@@ -9,8 +9,13 @@ def create_user():
         email="phillipe@gmail.com", 
         password_hash="123456"
     )
-
-    db.add(user)
+    
+    user2 = User(
+        username="Oceana",
+        email="gatamatos@gmail.com",
+        password_hash="123456"
+    )
+    db.add(user2)
     db.commit()
 
     print(f"Usuário criado com ID {user.id}")
