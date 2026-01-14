@@ -1,7 +1,7 @@
 from database import SessionLocal
 from models import User
 
-def create_user(username, email):
+#def create_user(username, email):
     db = SessionLocal()
 
     #error handling
@@ -24,7 +24,13 @@ def create_user(username, email):
     print(f"Usuário criado com ID {user.id}")
 
     db.close()
+def get_all_users():
+    db = SessionLocal()
+    users = db.query(User).all()
+
+    for user in users:
+        print(user.id, user.username, user.email)
+    db.close()
 
 if __name__== "__main__":
-    create_user("Joaquim","joaquim@gmail.com")
-    create_user("Celio", "joaquim@gmail.com")
+    
