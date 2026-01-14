@@ -44,4 +44,16 @@ def get_user_by_id(user_id):
 
     db.close()
 
+def get_user_by_email(email):
+    db = SessionLocal()
+
+    user = db.query(User).filter_by(email=email).first()
+
+    if user:
+        print(user.id, user.username)
+    else:
+        print("Email não encontrado")
+
+    db.close()
+    
 if __name__== "__main__":
