@@ -32,5 +32,16 @@ def get_all_users():
         print(user.id, user.username, user.email)
     db.close()
 
+def get_user_by_id(user_id):
+    db = SessionLocal()
+
+    user = db.query(User).filter_by(id=user_id).first()
+
+    if user:
+        print(user.username, user.email)
+    else:
+        print("Usuário não encontrado")
+
+    db.close()
+
 if __name__== "__main__":
-    
