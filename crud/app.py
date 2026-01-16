@@ -12,7 +12,7 @@ def update_email_by_username(username, new_email):
         db.close()
         return
 
-    email_exists = db.query(User).filter_by(email=new=email).first()
+    email_exists = db.query(User).filter_by(email=new_email).first()
 
     if email_exists:
         print("Email já está em uso")
