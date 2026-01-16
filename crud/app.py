@@ -2,18 +2,24 @@ from database import SessionLocal
 from models import User
 
 
-def update_user_email(user_id, new_email):
+def update_email_by_username(username, new_email):
     db = SessionLocal()
 
-    user = db.query(User).filter_by(id=user_id).first()
+    user = db.query(User).filter_by(username=username).first()
 
     if not user:
         print("Usuário não encontrado")
         db.close()
         return
 
-    user.email = new_email
+    email_exists = db.query(User).filter_by(email=new=email).first()
 
+    if email_exists:
+        print("Email já está em uso")
+        db.close()
+        return
+
+    user.email = new_email
     db.commit()
 
     print("Email atualizado com sucesso")
@@ -22,5 +28,5 @@ def update_user_email(user_id, new_email):
 
 # testando
 
-update_user_email(1, "novoemail@gmail.com")
-update_user_email(99, "x@gmail.com")
+update_email_by_username("Oceana", "oceana2@gmail.com")
+update_email_by_username("Kai", "xxt@gmail.com")
