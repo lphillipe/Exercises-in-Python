@@ -2,10 +2,10 @@ from database import SessionLocal
 from models import User
 
 
-def delete_user_by_id(user_id):
+def delete_user_by_username(username):
     db = SessionLocal()
 
-    user = db.query(User). filter_by(id=user_id).first()
+    user = db.query(User). filter_by(username=username).first()
 
     if not user:
         print("Usuário não encontrado")
@@ -21,6 +21,5 @@ def delete_user_by_id(user_id):
 
 #Testing
 
-delete_user_by_id(2)
-delete_user_by_id(2)
-delete_user_by_id(10)
+delete_user_by_username("joão")
+delete_user_by_username("maria")
