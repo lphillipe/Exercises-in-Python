@@ -21,3 +21,6 @@ def update_user_email(user_id, new_email):
     db.close()
 
 # testando
+
+update_user_email(1, "novoemail@gmail.com")
+update_user_email(99, "x@gmail.com")
