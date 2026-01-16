@@ -2,31 +2,25 @@ from database import SessionLocal
 from models import User
 
 
-def update_email_by_username(username, new_email):
+def delete_user_by_id(user_id):
     db = SessionLocal()
 
-    user = db.query(User).filter_by(username=username).first()
+    user = db.query(User). filter_by(id=user_id).first()
 
     if not user:
         print("Usuário não encontrado")
         db.close()
         return
 
-    email_exists = db.query(User).filter_by(email=new_email).first()
-
-    if email_exists:
-        print("Email já está em uso")
-        db.close()
-        return
-
-    user.email = new_email
+    db.delete(user)
     db.commit()
 
-    print("Email atualizado com sucesso")
+    print("Usuário deletado com sucesso")
 
-    db.close()
+    db.close
 
-# testando
+#Testing
 
-update_email_by_username("Oceana", "oceana2@gmail.com")
-update_email_by_username("Kai", "xxt@gmail.com")
+delete_user_by_id(2)
+delete_user_by_id(2)
+delete_user_by_id(10)
