@@ -22,3 +22,6 @@ def create_user(db: Session, username: str, email: str, password_hash: str):
     db.commit()
 
     return user
+
+def get_all_users(db: Session):
+    
