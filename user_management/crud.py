@@ -11,3 +11,14 @@ def create_user(db: Session, username: str, email: str, password_hash: str):
 
     if user_by_username or user_by_email:
         return None
+
+    user = User(
+        username=username,
+        email=email,
+        password_hash=password_hash
+    )
+
+    db.add(user)
+    db.commit()
+
+    return user
