@@ -17,7 +17,7 @@ def delete_user_by_username(username):
 
     print("Usuário deletado com sucesso")
 
-    db.close
+    db.close()
 
 #Testing
 
