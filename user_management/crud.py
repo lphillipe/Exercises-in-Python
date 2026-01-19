@@ -58,5 +58,17 @@ def update_user_email(db: Session, user_id: int, new_email: str):
 
     return user
 
+def update_user_username(db: Session, user_id: int, new_username: str):
+    user = db.query(User).filter_by(id=user_id).first()
 
-    
+    if user is None:
+        return None
+
+    username_exists = db.query(User).filter_by(username=new_username).first()
+
+    if username_exists:
+        return None
+
+    user.username = new_username
+    db.commit()
+    return user
