@@ -27,4 +27,9 @@ def get_all_users(db: Session):
     users = db.query(User).all()
     return users
 
-    
+def get_user_by_id(db: Session, user_id: int):
+    user = db.query(User).filter_by(id=user_id).first()
+    return user
+
+
+
