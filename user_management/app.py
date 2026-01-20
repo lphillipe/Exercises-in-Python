@@ -36,4 +36,17 @@ def main():
 
     print("\n Buscar por username:")
     print(get_user_by_username(db, "maria"))
+
+    # Testing UPDATE
+
+    print("\n✏️ Atualizando username:")
+    updated = update_user_username(db, 1, "joaquim_novo")
+    print(updated.username if updated else "Erro no update")
+
+    print("\n✏️ Atualizando email:")
+    updated = update_user_email(db, 2, "maria_nova@gmail.com")
+    print(updated.email if updated else "Erro no update")
+
+    
+
     
