@@ -3,6 +3,7 @@ from crud import (
     create_user,
     get_all_users,
     get_user_by_id,
+    get_user_by_username,
     update_user_username,
     update_user_email,
     delete_user_by_id,
@@ -18,7 +19,7 @@ def main():
     #Testing CREATE
     user1 = create_user(db, "joaquim", "joaquim@gmail.com", "123")
     user2 = create_user(db, "maria", "maria@gmail.com", "123")
-    user3 = create_iser(db, "joaquim", "duplicado@gmail.com", "123")
+    user3 = create_user(db, "joaquim", "duplicado@gmail.com", "123")
 
     print(user1)
     print(user2)
@@ -54,6 +55,8 @@ def main():
 
     print("\n🗑️ Delete por ID:")
     print(delete_user_by_id(db, 1))
+
+    db.close()
 
 if __name__ == "__main__":
     create_tables()
