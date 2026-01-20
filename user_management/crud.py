@@ -72,3 +72,13 @@ def update_user_username(db: Session, user_id: int, new_username: str):
     user.username = new_username
     db.commit()
     return user
+
+def delete_user_by_username(db: Session, username: str):
+    
+    user = db.query(User).filter_by(username=username).first()
+
+    if user is None:
+        return False
+
+    db.delete(user)
+    db.commit()
