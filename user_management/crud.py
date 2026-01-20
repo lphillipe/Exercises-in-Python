@@ -82,3 +82,14 @@ def delete_user_by_username(db: Session, username: str):
 
     db.delete(user)
     db.commit()
+
+def delete_user_by_id(db: Session, user_id: int):
+    user = db.query(User).filter_by(id=user_id).first()
+
+    if user is None:
+        return False
+
+    db.delete(user)
+    db.commit()
+
+    return True
