@@ -8,3 +8,12 @@ from crud import (
     delete_user_by_id,
     delete_user_by_username
 )
+
+def create_tables():
+    Base.metadata.create_all(bind=engine)
+
+def main():
+    db = SessionLocal()
+
+    #Testing CREATE
+    
