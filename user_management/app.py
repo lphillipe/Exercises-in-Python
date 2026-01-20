@@ -47,6 +47,16 @@ def main():
     updated = update_user_email(db, 2, "maria_nova@gmail.com")
     print(updated.email if updated else "Erro no update")
 
-    
+    #Testing DELETE
+
+    print("\n🗑️ Delete por username:")
+    print(delete_user_by_username(db, "maria_nova"))
+
+    print("\n🗑️ Delete por ID:")
+    print(delete_user_by_id(db, 1))
+
+if __name__ == "__main__":
+    create_tables()
+    main()
 
     
