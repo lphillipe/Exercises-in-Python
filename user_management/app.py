@@ -16,4 +16,11 @@ def main():
     db = SessionLocal()
 
     #Testing CREATE
+    user1 = create_user(db, "Joaquim", "joaquim@gmail.com", "123")
+    user2 = create_user(db, "Maria", "maria@gmail.com", "123")
+    user3 = create_iser(db, "Joaquim", "duplicado@gmail.com", "123")
+
+    print(user1)
+    print(user2)
+    print(user3)
     
