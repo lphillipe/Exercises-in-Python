@@ -43,4 +43,10 @@ def get_user(user_id: int, db: Session = Depends(get_db)):
     return user
 
 @app.put("/users/{user_id}/username", response_model=schemas.UserResponse)
-def upda
+def update_username(user_ind: int, username: str, db: Session = Depends(get_db)):
+    user = crud.update_user_username(db, user_id, username)
+
+    if not user:
+        raise HTTPException(status_code=400, detail="Not possible to update")
+
+    return user
