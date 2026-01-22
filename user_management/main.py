@@ -50,3 +50,12 @@ def update_username(user_ind: int, username: str, db: Session = Depends(get_db))
         raise HTTPException(status_code=400, detail="Not possible to update")
 
     return user
+
+@app.delete("/users/{user_id}")
+def delete_user(user_id: int, db: Session = Depends(get_db)):
+    deleted = crud.delete_user_by_id(db. user_id)
+
+    if not deleted:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    return {"message": "User found successfully"}
