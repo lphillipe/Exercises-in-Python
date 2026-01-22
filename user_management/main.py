@@ -12,9 +12,8 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="User Management API")
 
-# Endpoint POST
+# Endpoint POST Create USERS
 @app.post("/users", response_model=schemas.UserResponse)
-
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     created_user = crud.create_user(
         db,
@@ -28,5 +27,20 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     
     return created_user
 
-# Endpoint GET
-@app.get("/users", response_model=list)
+# Endpoint GET List users
+@app.get("/users", response_model=list[schemas.UserResponse])
+def list_users(db: Session = Depends(get_db)):
+    return crud.get_all_users(db)
+
+# Endpoint GET Search by ID
+@app.get("/users/{user_id}", response_model=schemas.UserResponse)
+def get_user(user_id: int, db: Session = Depends(get_db)):
+    user = crud.get_user_by_id(db, user_id)
+
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+        
+    return user
+
+@app.put("/users/{user_id}/username", response_model=schemas.UserResponse)
+def upda
