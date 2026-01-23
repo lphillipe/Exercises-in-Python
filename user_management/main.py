@@ -19,7 +19,7 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
         db,
         username=user.username,
         email=user.email,
-        password_hash=user.password
+        password=user.password
     )
 
     if not created_user:
