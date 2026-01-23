@@ -1,16 +1,20 @@
 from sqlalchemy.orm import Session
 from models import User
+from security import hash_password
 
 
 #Function Create
 
-def create_user(db: Session, username: str, email: str, password_hash: str):
+def create_user(db: Session, username: str, email: str, password: str):
     
     # Step 1: check username
     user_by_username = db.query(User).filter_by(username=username).first()
 
     # Step 2: check email
     user_by_email = db.query(User).filter_by(email=email).first()
+    
+    #Step 3: hash password
+    hashed_password = hash_password(password)
 
     if user_by_username or user_by_email:
         return None
@@ -18,7 +22,7 @@ def create_user(db: Session, username: str, email: str, password_hash: str):
     user = User(
         username=username,
         email=email,
-        password_hash=password_hash
+        password_hash=hashed_password
     )
 
     db.add(user)
