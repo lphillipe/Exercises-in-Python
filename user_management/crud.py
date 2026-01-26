@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 from models import User
 from security import hash_password
+from security import verify_password
 
 
 #Function Create
@@ -97,3 +98,19 @@ def delete_user_by_id(db: Session, user_id: int):
     db.commit()
 
     return True
+
+# Security
+
+def authenticate_user(db: Session, email: str, password: str):
+    user = db.query(User).filter_by(email=email).first()
+
+    if user is None:
+        return None
+    
+    if not verify_password(password, user.password_hash):
+        return None
+
+
+    return user
+
+    
