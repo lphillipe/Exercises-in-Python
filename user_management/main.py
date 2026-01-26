@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 from database import engine, Base, get_db
 import crud
 import schemas
+import security
 
 
 #Create tables
@@ -59,3 +60,19 @@ def delete_user(user_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="User not found")
 
     return {"message": "User found successfully"}
+
+@app.post("/login")
+def login(data: schemas.LoginData, db: Session = Depends(get_db)):
+    user = crud.authenticate_user(db, data.email, data.password)
+
+    if not user:
+        raise HTTPException(status_code=401, detail="Invalid Credentials")
+
+    token = security.create_access_token(
+        data={"sub": str(user.id)}
+    )
+
+    return {
+        "access_token": token,
+        "token_type": "bearer"
+    }
