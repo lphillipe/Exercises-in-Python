@@ -1,10 +1,10 @@
-from crud import create_user, authenticate_user
+from app.crud import create_user, authenticate_user
 
 def test_create_user_success(db):
     user = create_user(
         db,
-        username="joao"
-        email="joao@gmail.com"
+        username="joao",
+        email="joao@gmail.com",
         password="123"
     )
 
