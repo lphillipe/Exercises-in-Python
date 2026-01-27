@@ -1,10 +1,8 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from database import engine, Base, get_db
-import crud
-import schemas
-import security
+from app.database import engine, Base, get_db
+from app import crud, schemas, security
 
 
 #Create tables
