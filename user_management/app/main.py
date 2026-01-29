@@ -4,6 +4,9 @@ from sqlalchemy.orm import Session
 from app.database import engine, Base, get_db
 from app import crud, schemas, security
 
+from app.security import get_current_user
+from app.models import User
+
 
 #Create tables
 
@@ -51,7 +54,7 @@ def update_username(user_ind: int, username: str, db: Session = Depends(get_db))
     return user
 
 @app.delete("/users/{user_id}")
-def delete_user(user_id: int, db: Session = Depends(get_db)):
+def delete_user(user_id: int, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
     deleted = crud.delete_user_by_id(db, user_id)
 
     if not deleted:
