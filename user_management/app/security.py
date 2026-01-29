@@ -1,6 +1,16 @@
 from passlib.context import CryptContext
 from datetime import datetime, timedelta
 from jose import jwt
+from fastapi.security import OAuth2PasswordBearer
+from fastapi import Depends, HTTPException, status
+from jose import JWTError, jwt
+from sqlalchemy.orm import Session
+
+from app.database import get_db
+from app.models import User
+
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 
 SECRET_KEY= "123"
@@ -22,3 +32,29 @@ def hash_password(password: str) -> str:
 def verify_password(password: str, hashed_password: str) -> bool:
     """Verifica senha pura contra o hash"""
     return pwd_context.verify(password, hashed_password)
+
+def get_current_user(
+    token: str = Depends(oauth2_scheme),
+    db: Session = Depends(get_db)
+):
+    credentials_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Credenciais inválidas",
+        headers=("WWW-Authenticate": "Bearer"),
+    )
+
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        user_id: str | None = payload.get("sub")
+
+        if user_id is None:
+            raise credentials_exception
+    except JWTError:
+        raise credentials_exception
+
+    user = db.query(User).filter_by(id=int(user_id)).first()
+
+    if user is None:
+        raise credentials_exception
+
+    return user
