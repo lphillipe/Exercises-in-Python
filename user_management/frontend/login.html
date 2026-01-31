@@ -43,14 +43,14 @@
                 const data = await res.json();
 
                 if (!res.ok) {
-                    msg.innerText = "Invalid login";
+                    msg.innerText = "Login inválido";
                     return;
                 }
 
                 // salva token
                 localStorage.setItem("token", data. access_token);
 
-                msg.innerText = "Login OK - redirecting...";
+                msg.innerText = "Login OK - Redirecionando...";
                 window.location.href = "users.html";
             });
         </script>
