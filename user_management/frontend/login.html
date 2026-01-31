@@ -30,10 +30,8 @@
                 const password = document.getElementById("password").value;
 
                 // OAuth2 password flow > form-data
-                const body = new URLSearchParams();
-                body.append("username", email);
-                body.append("passowrd", password);
-
+                const body = `username=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
+                
                 const res = await fetch("http://127.0.0.1:8000/login", {
                     method: "POST",
                     headers: {
@@ -45,7 +43,7 @@
                 const data = await res.json();
 
                 if (!res.ok) {
-                    msg.innerText = "Invalid longin";
+                    msg.innerText = "Invalid login";
                     return;
                 }
 
