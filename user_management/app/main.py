@@ -11,6 +11,8 @@ from fastapi.security import OAuth2PasswordRequestForm
 
 from fastapi.middleware.cors import CORSMiddleware
 
+app = FastAPI(title="User Management API")
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -18,10 +20,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-
-app = FastAPI(title="User Management API")
 
 @app.on_event("startup")
 def on_startup():
