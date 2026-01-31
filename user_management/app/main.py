@@ -3,15 +3,15 @@ from sqlalchemy.orm import Session
 
 from app.database import engine, Base, get_db
 from app import crud, schemas, security
-
 from app.security import get_current_user
 from app.models import User
-
 from fastapi.security import OAuth2PasswordRequestForm
-
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI(title="User Management API")
+
+app.mount("/static", StaticFiles(directory="frontend"), name="static")
 
 app.add_middleware(
     CORSMiddleware,
