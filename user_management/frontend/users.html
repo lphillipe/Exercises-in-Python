@@ -71,7 +71,7 @@
             //===========================
 
             document.getElementById("createForm")
-            .addEventListener("submit", async (e)) => {
+            .addEventListener("submit", async (e) => {
                 e.preventDefault();
 
                 const username = document.getElementById("newUsername").value;
@@ -92,7 +92,21 @@
                 });
 
                 const data = await res.json();
-            }
+
+                if (!res.ok) {
+                    alert(data.detail || "Erro ao criar usuário");
+                    return;
+                }
+                alert("Usuário criado!");
+
+                // limpa campos
+
+                e.target.reset();
+
+                // recarrega lista
+
+                loadUsers();
+            });
 
             //=========================
             // DELETE USER
