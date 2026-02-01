@@ -5,6 +5,17 @@
         <title>Usuários</title>
     </head>
     <body>
+        <h3>Criar usuário</h3>
+
+        <form id="createForm">
+            <input id="newUsername" placeholder="Username" required>
+            <input id="newEmail" placeholder="Email" required>
+            <input id="newPassword" placeholder="Senha" required>
+            <button type="submit">Criar</button>
+        </form>
+
+        <hr>
+
 
         <h2>Lista de Usuários</h2>
 
@@ -54,6 +65,12 @@
                     list.appendChild(li);
                 });
             }
+
+            //===========================
+            // CREATE USER
+            //===========================
+
+            
 
             //=========================
             // DELETE USER
