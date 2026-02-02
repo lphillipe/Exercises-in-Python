@@ -1,28 +1,25 @@
-# Conversões automáticas
-from pydantic import BaseModel
-
-class User(BaseModel):
-    name: str
-    age: int
-    email: str
-
-u = User(name="Felipe", age="30", email="f@pycode.com")
-print(u.age)   # 30 (foi convertido de str para int)
-
-
-
-# Validação automática
 from pydantic import BaseModel, EmailStr
+from typing import Optional
+from datetime import datetime
 
-class User(BaseModel):
-    email: EmailStr
-
-User(email="email_invalido") # Levanta ValidationError
-
-
-
-# Defaults e opcionais
-class Produto(BaseModel):
+# Modelo base
+class PessoaBase(BaseModel):
     nome: str
-    preco: float = 0.0
-    descricao: str | None = None
+    email: EmailStr
+    telefone: Optional[str] = None
+
+# Modelo para criação (sem ID)
+class PessoaCreate(PessoaBase):
+    senha: str
+
+# Modelo completo (com ID e timestamps)
+class Pessoa(PessoaBase):
+    id: int
+    criado_em: datetime
+    atualizado_em: Optional[datetime] = None
+
+# Modelo para resposta (sem senha)
+class PessoaResponse(PessoaBase):
+    id: int
+    criado_em: datetime
+
