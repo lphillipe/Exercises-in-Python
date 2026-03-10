@@ -1,8 +1,5 @@
-valor = 10
+idade = 28
 
 
-if valor < 5:
-    print("To dentro do IF")
-    print('O valor é maior que 5.')
-
-print("To fora do IF")
+if idade >= 18:
+    print('É maior de idade')
