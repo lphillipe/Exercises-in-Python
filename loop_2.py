@@ -1,4 +1,2 @@
-lista = ['Phillipe', 'Oceana', 'Saria']
-
-for numero in lista:
-    print(numero)
+for i in range(10):
+    print(i)
