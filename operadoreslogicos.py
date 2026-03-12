@@ -1,7 +1,8 @@
-a = False
-b = False
+nome = 'Phillipe'
+idade = 25
+peso = 90
 
-if a or b:
-    print('Atendeu a condição!')
+if (nome == 'Phillipe' or idade == 24) and peso == 89:
+    print('Dados corretos!')
 else:
-    print('Não atendeu a condição!')
+    print('Dados incorretos!')
