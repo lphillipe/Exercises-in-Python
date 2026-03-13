@@ -4,4 +4,5 @@ def envia_email(cliente):
 clientes = ['Ana', 'Jonas', 'Phillipe', 'Cláudio', 'Renato']
 
 
-envia_email(clientes[0])
+for cliente in clientes:
+    print(cliente)
