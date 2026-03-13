@@ -5,6 +5,6 @@ clientes = ['Ana', 'Jonas', 'Phillipe', 'Cláudio', 'Renato']
 
 
 for i, cliente in enumerate(clientes):
-    if i == 4:
-        break
+    if i == 2:
+        continue
     envia_email(cliente)
