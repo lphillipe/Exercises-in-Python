@@ -5,4 +5,4 @@ clientes = ['Ana', 'Jonas', 'Phillipe', 'Cláudio', 'Renato']
 
 
 for cliente in clientes:
-    print(cliente)
+    envia_email(cliente)
