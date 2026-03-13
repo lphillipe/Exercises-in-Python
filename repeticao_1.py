@@ -4,5 +4,7 @@ def envia_email(cliente):
 clientes = ['Ana', 'Jonas', 'Phillipe', 'Cláudio', 'Renato']
 
 
-for cliente in clientes:
+for i, cliente in enumerate(clientes):
+    if i == 4:
+        break
     envia_email(cliente)
