@@ -4,5 +4,5 @@ def envia_email(cliente):
 clientes = ['Ana', 'Jonas', 'Phillipe', 'Cláudio', 'Renato']
 
 
-for i, cliente in enumerate(clientes):
-    print(i, cliente)
+for cliente in clientes:
+    envia_email(cliente)
