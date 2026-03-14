@@ -1,6 +1,4 @@
-carros = []
+carros = ['Marea', 'Fusca', 'Chevette']
 
-carros.append('Marea')
-carros.append('Fusca')
-
+carros.append('Corcel')
 print(carros)
