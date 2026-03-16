@@ -18,3 +18,5 @@ celular = Celular()
 
 
 celular.despertador()
+celular.jogar_cobrinha()
+celular.fazer_ligações()
