@@ -3,3 +3,6 @@ def login(usuario, senha):
         return 'Login correto, você está logado!'
     else:
         return 'Login incorreto, você foi desconectado!'
+    
+def envia_email_log():
+    return 'Email com log enviado!'
