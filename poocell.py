@@ -14,9 +14,11 @@ class Celular:
     def despertador(self):
         print('Despertando...')
 
+    def calcular(self, v1, v2):
+        return v1 + v2
+
 celular = Celular()
 
 
-celular.despertador()
-celular.jogar_cobrinha()
-celular.fazer_ligações()
+resultado = celular.calcular(4, 10)
+print(resultado)
