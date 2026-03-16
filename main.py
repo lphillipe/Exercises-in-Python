@@ -1,7 +1,8 @@
 import api
+import os
 
-usuario = 'luis'
-senha = '1234'
+usuario = os.environ.get('USUARIO_API')
+senha = os.environ.get('SENHA_API')
 
 login = api.login(usuario, senha)
 print(login)
