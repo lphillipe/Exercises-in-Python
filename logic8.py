@@ -1,6 +1,5 @@
 altura = float(input("Diga a altura do retângulo: "))
-largura = float(input("Diga a largura do retângulo: ")) qwewqe
-
+largura = float(input("Diga a largura do retângulo: "))
 
 def area(altura, largura):
     return altura * largura
