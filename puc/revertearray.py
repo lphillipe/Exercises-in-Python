@@ -12,4 +12,4 @@ def reverter(arr):
     return arr
 
 
-print(reverter([2,4,5]))
+print(reverter([2,3,5,6,8,9]))
