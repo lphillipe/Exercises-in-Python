@@ -1,0 +1,40 @@
+# Arquivos de Sistema
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Pastas de Dependências Comuns
+node_modules/
+bower_components/
+vendor/
+
+# Logs e Dados
+*.log
+*.sqlite
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Compilação e Build
+build/
+dist/
+out/
+bin/
+obj/
+
+# Ambiente Virtual Python
+venv/
+env/
+ENV/
+*.pyc
+
+# Configurações de IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
