@@ -17,4 +17,4 @@ class CallMeBot:
         response = requests.get(
             url =f'{self.__base_url}?phone={self.__phone_number}&text={message}&apikey={self.__api_key}'
         )
-        return response.json()
+        return response.text
