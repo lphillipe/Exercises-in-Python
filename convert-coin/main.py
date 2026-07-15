@@ -7,5 +7,5 @@ conversor_service = CoinConversorService()
 
 conversion = conversor_service.converter('BTC', 'BRL')
 
-wpp_service = CallMebot()
+wpp_service = CallMeBot()
 wpp_service.send_message(f'Cotação do Bitcoin: {conversion}')
