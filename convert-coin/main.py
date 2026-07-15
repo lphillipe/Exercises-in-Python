@@ -1,9 +1,11 @@
-from clients import CoinConversorService
+from clients.conversor_service import CoinConversorService
+from clients.callmebot_service import CallMeBot
 
 
 
-client = CoinConversorService()
+conversor_service = CoinConversorService()
 
-conversion = client.converter('BTC', 'USD')
+conversion = conversor_service.converter('BTC', 'BRL')
 
-print(conversion)
+wpp_service = CallMebot()
+wpp_service.send_message(f'Cotação do Bitcoin: {conversion}')
