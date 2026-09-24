@@ -1,5 +1,15 @@
-def make_shirt(size, text):
-    print(f"Size t-shirt is {size} the text is {text}")
+def make_shirt(size="large", text="i love python"):
+    print(f"Size t-shirt is {size}, {text}")
 
 
-print(make_shirt("large", "t-shirt is a joke"))
+make_shirt(text="t-shirt is very old")
+
+
+
+
+def describe_city(name="Reykjavik", country="Iceland"):
+    print(f" {name} is in {country}")
+
+describe_city("Luís", "Brasil")
+describe_city(name="João")
+describe_city(country="North Korean")
